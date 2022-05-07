@@ -35,6 +35,13 @@ async function run () {
             res.send(product)
         })
 
+        app.get('/manage', async (req, res )=>{
+            const query = {};
+            const cursor = productCollection.find(query);
+            const product = await  cursor.toArray();
+            res.send(product)
+        })
+
     } catch (error) {
         
     }
