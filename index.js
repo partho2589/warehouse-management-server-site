@@ -49,6 +49,13 @@ async function run () {
             res.send(result)
         })
 
+        // post item
+        app.post('/manage', async(req, res)=>{
+            const newItem = req.body;
+            const result = await productCollection.insertOne(newItem)
+            res.send(result)
+        })
+
     } catch (error) {
         
     }
